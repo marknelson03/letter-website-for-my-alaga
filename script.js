@@ -21,6 +21,63 @@ document.addEventListener('DOMContentLoaded', () => {
     const heartsContainer = document.querySelector('.hearts');
     if (heartsContainer) setInterval(() => createHeart(heartsContainer), 300);
 
+    // Password and envelope interaction
+    const envelopeFlap = document.querySelector('.envelope-flap');
+    const passwordModal = document.getElementById('password-modal');
+    const passwordInput = document.getElementById('password-input');
+    const passwordSubmit = document.getElementById('password-submit');
+    const passwordError = document.getElementById('password-error');
+    const correctPassword = 'mydadaismypalagi';
+    let envelopeOpened = false;
+    
+    if (envelopeFlap) {
+        envelopeFlap.addEventListener('click', () => {
+            const envelope = document.querySelector('.envelope');
+            // If envelope is currently open, just close it (no password needed)
+            if (envelopeOpened && envelope.classList.contains('open')) {
+                envelope.classList.remove('open');
+                envelopeOpened = false;
+            } else {
+                // If envelope is closed, show password modal to open it
+                passwordModal.classList.remove('hidden');
+                passwordInput.focus();
+                passwordInput.value = '';
+                passwordError.textContent = '';
+            }
+        });
+    }
+    
+    // Handle password submission
+    if (passwordSubmit) {
+        passwordSubmit.addEventListener('click', checkPassword);
+    }
+    
+    if (passwordInput) {
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+    }
+    
+    function checkPassword() {
+        const enteredPassword = passwordInput.value;
+        const envelope = document.querySelector('.envelope');
+        
+        if (enteredPassword === correctPassword) {
+            // Correct password - open the envelope
+            passwordModal.classList.add('hidden');
+            envelope.classList.add('open');
+            envelopeOpened = true;
+            passwordError.textContent = '';
+        } else {
+            // Wrong password
+            passwordError.textContent = '❌ Wrong password, try again';
+            passwordInput.value = '';
+            passwordInput.focus();
+        }
+    }
+
     // Image load diagnostics and visible fallback for broken images
     const photos = document.querySelectorAll('.photo');
     photos.forEach(img => {
@@ -83,11 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.removeEventListener('touchstart', enableAudio);
     }
 
-    // Clicking the hint button should enable audio; also support any page click/tap
+    // Only clicking the hint button enables audio
     if (hintBtn) hintBtn.addEventListener('click', enableAudio);
-    window.addEventListener('click', enableAudio);
-    window.addEventListener('touchstart', enableAudio);
 
-    // The overlay remains visible until the user explicitly taps/clicks.
-    // (Removed automatic auto-hide to prevent the main concept appearing suddenly.)
+    // The overlay remains visible until the user explicitly clicks the button.
 });

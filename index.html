@@ -19,17 +19,28 @@
     <div id="audio-hint" aria-hidden="false">
         <div class="hint-box">
             <h2>💖 My Alaga 💖</h2>
-            <p>Tap anywhere to enter</p>
-            <button id="enable-sound-btn">Enter</button>
+            <button id="enable-sound-btn">Tap to enter</button>
         </div>
     </div>
 
     <!-- Hearts -->
     <div class="hearts"></div>
 
+    <!-- Password Modal -->
+    <div id="password-modal" class="password-modal hidden">
+        <div class="password-modal-content">
+            <h2>🔐 Enter the password</h2>
+            <input type="password" id="password-input" placeholder="Enter password" class="password-input">
+            <button id="password-submit" class="password-btn">Open</button>
+            <p id="password-error" class="password-error"></p>
+        </div>
+    </div>
+
     <!-- Letter -->
     <div class="letter">
-        <h1>Happy Valentine’s Day ❤️</h1>
+        <div class="flower-top">
+            <h1>Happy Valentine's Day ❤️</h1>
+        </div>
         <p class="date">February 14, 2026</p>
 
         <div class="photo-grid">
@@ -39,26 +50,39 @@
             <img src="img/P4.png" alt="Memory 4" class="photo">
         </div>
 
-        <p>My Love,</p>
+        <div class="envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-instruction">Tap the heart to read the letter</div>
+            <div class="envelope-body">
+                <div class="message-content">
+                    <p>My Dada Alaga,</p>
 
-        <p>
-            From the moment you came into my life, everything changed for the better.
-            You are my safe place, my happiness, and my favorite person.
-        </p>
+                    <p>
+                        Hiii, Baby
+                    </p>
 
-        <p>
-            Loving you is the easiest and most beautiful thing I have ever done.
-            Thank you for being you.
-        </p>
+                    <p>
+                        Loving you is the easiest and most beautiful thing I have ever done.
+                        Thank you for being you.
+                    </p>
 
-        <p>
-            I love you endlessly — today and always.
-        </p>
+                    <p>
+                        I love you endlessly — today and always.
+                    </p>
 
-        <p class="signature">
-            Forever yours,<br>
-            <strong>Mark</strong>
-        </p>
+                    <div class="flower-divider">
+                        <span class="flower">🌸</span>
+                        <span class="flower">🌺</span>
+                        <span class="flower">🌸</span>
+                    </div>
+
+                    <p class="signature">
+                        Forever yours,<br>
+                        <strong>Nonoy</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
