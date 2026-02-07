@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Valentine 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Music: attempt autoplay with sound (fallback if blocked) -->
+    <audio id="bg-music" autoplay loop playsinline>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Overlay hint that prompts the visitor to enable sound -->
+    <div id="audio-hint" aria-hidden="false">
+        <div class="hint-box">
+            <h2>💖 My Valentine 💖</h2>
+            <p>Tap anywhere to enter</p>
+            <button id="enable-sound-btn">Enter</button>
+        </div>
+    </div>
+
+    <!-- Hearts -->
+    <div class="hearts"></div>
+
+    <!-- Letter -->
+    <div class="letter">
+        <h1>Happy Valentine’s Day ❤️</h1>
+        <p class="date">February 14, 2026</p>
+
+        <div class="photo-grid">
+            <img src="img/P1.png" alt="Memory 1" class="photo">
+            <img src="img/P2.png" alt="Memory 2" class="photo">
+            <img src="img/P3.png" alt="Memory 3" class="photo">
+            <img src="img/P4.png" alt="Memory 4" class="photo">
+        </div>
+
+        <p>My Love,</p>
+
+        <p>
+            From the moment you came into my life, everything changed for the better.
+            You are my safe place, my happiness, and my favorite person.
+        </p>
+
+        <p>
+            Loving you is the easiest and most beautiful thing I have ever done.
+            Thank you for being you.
+        </p>
+
+        <p>
+            I love you endlessly — today and always.
+        </p>
+
+        <p class="signature">
+            Forever yours,<br>
+            <strong>Mark</strong>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
